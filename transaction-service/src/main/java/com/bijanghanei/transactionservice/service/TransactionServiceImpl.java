@@ -1,30 +1,27 @@
 package com.bijanghanei.transactionservice.service;
 
+import com.bijanghanei.transactionservice.client.WalletClient;
 import com.bijanghanei.transactionservice.dto.InputDto;
 import com.bijanghanei.transactionservice.dto.TransactionDto;
 import com.bijanghanei.transactionservice.entity.Transaction;
 import com.bijanghanei.transactionservice.external.Wallet;
 import com.bijanghanei.transactionservice.repository.TransactionRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.RestTemplate;
 
-import java.math.BigDecimal;
 import java.util.List;
 @Service
 public class TransactionServiceImpl implements TransactionService{
-    @Autowired
-    RestTemplate restTemplate;
+//    @Autowired
+//    RestTemplate restTemplate;
     private final TransactionRepository transactionRepository;
+    private final WalletClient walletClient;
 
-    public TransactionServiceImpl(TransactionRepository transactionRepository) {
+    public TransactionServiceImpl(TransactionRepository transactionRepository, WalletClient walletClient) {
         this.transactionRepository = transactionRepository;
+        this.walletClient = walletClient;
     }
 
     @Override
@@ -40,13 +37,16 @@ public class TransactionServiceImpl implements TransactionService{
     @Override
     public TransactionDto addMoney(InputDto input) {
 //        RestTemplate restTemplate = new RestTemplate();
-        Wallet wallet = restTemplate.getForObject("http://wallet-service:8082/wallet/"+input.getUserId()
-                ,Wallet.class);
+//        Wallet wallet = restTemplate.getForObject("http://wallet-service:8082/wallet/"+input.getUserId()
+//                ,Wallet.class);
+
+        Wallet wallet = walletClient.getWallet(input.getUserId());
         if (wallet!=null){
 //            RestTemplate updateRestTemplate = new RestTemplate();
-            HttpEntity<InputDto> request = new HttpEntity<>(input);
-            ResponseEntity<HttpStatus> response = restTemplate.exchange("http://wallet-service:8082", HttpMethod.PUT,request,HttpStatus.class);
+//            HttpEntity<InputDto> request = new HttpEntity<>(input);
+//            ResponseEntity<HttpStatus> response = restTemplate.exchange("http://wallet-service:8082", HttpMethod.PUT,request,HttpStatus.class);
 
+            ResponseEntity<HttpStatus> response = walletClient.updateWallet(input);
             if (response.getBody() == HttpStatus.OK){
                 Transaction transaction = new Transaction();
                 transaction.setUserId(input.getUserId());
