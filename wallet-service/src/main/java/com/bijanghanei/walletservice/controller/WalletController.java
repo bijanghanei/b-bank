@@ -23,9 +23,13 @@ public class WalletController {
     public ResponseEntity<WalletDto> GetBalance(@PathVariable Integer id){
         return new ResponseEntity<>(walletService.getWalletBalance(id),HttpStatus.OK);
     }
+//    @GetMapping("wallet/{id}")
+//    public ResponseEntity<Wallet> GetWallet(@PathVariable Integer id){
+//        return new ResponseEntity<>(walletService.findWalletById(id),HttpStatus.OK);
+//    }
     @GetMapping("wallet/{id}")
-    public ResponseEntity<Wallet> GetWallet(@PathVariable Integer id){
-        return new ResponseEntity<>(walletService.findWalletById(id),HttpStatus.OK);
+    public Wallet GetWallet(@PathVariable("id") Integer id){
+        return walletService.findWalletById(id);
     }
 
     @PutMapping

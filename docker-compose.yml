@@ -1,16 +1,16 @@
 version: '3'
 services:
-  service1:
+  service-registry:
     build:
       context: ./service-registry
     ports:
       - "8761:8080"
-  service2:
+  transaction-service:
     build:
       context: ./transaction-service
     ports:
       - "8081:8080"
-  service3:
+  wallet-service:
     build:
       context: ./wallet-service
     ports:
