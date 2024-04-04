@@ -1,17 +1,83 @@
 version: '3'
 services:
-  service-registry:
-    build:
-      context: ./service-registry
+#  service-registry:
+#    build:
+#      context: ./service-registry
+#    ports:
+#      - "8761:8080"
+#    networks:
+#      - b-net
+#  transaction-service:
+#    build:
+#      context: ./transaction-service
+#    ports:
+#      - "8081:8080"
+#    networks:
+#      - b-net
+#  wallet-service:
+#    build:
+#      context: ./wallet-service
+#    ports:
+#      - "8082:8080"
+#    networks:
+#      - b-net
+  transactions-db:
+    image: mysql:${MYSQL_VERSION:-8.0.22}
+    container_name: transaction-db
+    command: ["--default-authentication-plugin=mysql_native_password"]
     ports:
-      - "8761:8080"
-  transaction-service:
-    build:
-      context: ./transaction-service
+      - 33062:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-very_secret}
+      MYSQL_DATABSE: ${DB_DATABASE:-transactions}
+      MYSQL_USER: ${DB_USERNAME:-user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-password}
+    networks:
+      - b-net
+    volumes:
+      - mysql-data:/var/lib/transactions-db
+  wallet-db:
+    image: mysql:${MYSQL_VERSION:-8.0.22}
+    container_name: wallet-db
+    command: [ "--default-authentication-plugin=mysql_native_password" ]
     ports:
-      - "8081:8080"
-  wallet-service:
-    build:
-      context: ./wallet-service
+      - 33061:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-very_secret}
+      MYSQL_DATABSE: ${DB_DATABASE:-wallets}
+      MYSQL_USER: ${DB_USERNAME:-user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-password}
+    restart: unless-stopped
+    networks:
+      - b-net
+    volumes:
+      - mysql-data:/var/lib/wallets-db
+  phpmyadmin-transactions:
+    image: phpmyadmin
+    restart: always
     ports:
-      - "8082:8080"
+      - 6072:80
+    depends_on:
+      - transactions-db
+    environment:
+      - PMA_HOST=transaction-db
+    networks:
+      - b-net
+  phpmyadmin-wallets:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 6073:80
+    depends_on:
+      - wallet-db
+    environment:
+      - PMA_HOST=wallet-db
+    networks:
+      - b-net
+
+volumes:
+  mysql-data:
+    driver: local
+networks:
+  b-net:
+    driver: bridge
