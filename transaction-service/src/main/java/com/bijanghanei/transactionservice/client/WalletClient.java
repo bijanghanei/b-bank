@@ -12,6 +12,6 @@ public interface WalletClient {
 
     @GetMapping("/wallet/{id}")
     Wallet getWallet(@PathVariable("id") Integer id);
-    @PutMapping
+    @PutMapping("/wallet/update")
     ResponseEntity<HttpStatus> updateWallet(@RequestBody InputDto inputDto);
 }

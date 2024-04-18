@@ -5,14 +5,12 @@ import com.bijanghanei.transactionservice.dto.TransactionDto;
 import com.bijanghanei.transactionservice.entity.Transaction;
 import com.bijanghanei.transactionservice.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/transactions")
 public class TransactionController {
     private final TransactionService transactionService;
 
@@ -24,7 +22,7 @@ public class TransactionController {
     public List<Transaction> GetTransactions(){
         return transactionService.findAll();
     }
-    @PostMapping
+    @PostMapping("/add")
     public TransactionDto AddMoney(@RequestBody InputDto input){
         return transactionService.addMoney(input);
     }

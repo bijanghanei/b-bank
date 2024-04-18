@@ -10,11 +10,13 @@
         <module name="transaction-service" />
         <module name="wallet-service" />
         <module name="service-registry" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="gateway" options="-parameters" />
       <module name="service-registry" options="-parameters" />
       <module name="transaction-service" options="-parameters" />
       <module name="wallet-service" options="-parameters" />

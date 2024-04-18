@@ -74,6 +74,13 @@ services:
       - PMA_HOST=wallet-db
     networks:
       - b-net
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      - 9411:9411
+    networks:
+      - b-net
 
 volumes:
   mysql-data:

@@ -6,6 +6,7 @@ import com.bijanghanei.transactionservice.dto.TransactionDto;
 import com.bijanghanei.transactionservice.entity.Transaction;
 import com.bijanghanei.transactionservice.external.Wallet;
 import com.bijanghanei.transactionservice.repository.TransactionRepository;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -35,6 +36,7 @@ public class TransactionServiceImpl implements TransactionService{
     }
 
     @Override
+    @CircuitBreaker(name = "transactionBreaker")
     public TransactionDto addMoney(InputDto input) {
 //        RestTemplate restTemplate = new RestTemplate();
 //        Wallet wallet = restTemplate.getForObject("http://wallet-service:8082/wallet/"+input.getUserId()

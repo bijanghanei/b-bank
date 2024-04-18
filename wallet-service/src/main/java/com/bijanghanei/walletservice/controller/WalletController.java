@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/wallet")
 public class WalletController {
     private final WalletService walletService;
 
@@ -19,7 +20,7 @@ public class WalletController {
         this.walletService = walletService;
     }
 
-    @GetMapping("balance/{id}")
+    @GetMapping("/balance/{id}")
     public ResponseEntity<WalletDto> GetBalance(@PathVariable Integer id){
         return new ResponseEntity<>(walletService.getWalletBalance(id),HttpStatus.OK);
     }
@@ -27,16 +28,16 @@ public class WalletController {
 //    public ResponseEntity<Wallet> GetWallet(@PathVariable Integer id){
 //        return new ResponseEntity<>(walletService.findWalletById(id),HttpStatus.OK);
 //    }
-    @GetMapping("wallet/{id}")
+    @GetMapping("/{id}")
     public Wallet GetWallet(@PathVariable("id") Integer id){
         return walletService.findWalletById(id);
     }
 
-    @PutMapping
+    @PutMapping("/update")
     public HttpStatus UpdateBalance(@RequestBody InputDto input){
         return walletService.updateWalletBalance(input.getUserId(),input.getAmount());
     }
-    @PostMapping
+    @PostMapping("/create")
     public void CreateWallet(){
         walletService.createWallet();
     }
