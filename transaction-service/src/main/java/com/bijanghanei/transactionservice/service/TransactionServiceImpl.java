@@ -7,6 +7,7 @@ import com.bijanghanei.transactionservice.entity.Transaction;
 import com.bijanghanei.transactionservice.external.Wallet;
 import com.bijanghanei.transactionservice.repository.TransactionRepository;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -37,6 +38,7 @@ public class TransactionServiceImpl implements TransactionService{
 
     @Override
     @CircuitBreaker(name = "transactionBreaker")
+    @RateLimiter(name = "transactionRateLimiter")
     public TransactionDto addMoney(InputDto input) {
 //        RestTemplate restTemplate = new RestTemplate();
 //        Wallet wallet = restTemplate.getForObject("http://wallet-service:8082/wallet/"+input.getUserId()
