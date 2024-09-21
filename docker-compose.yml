@@ -81,7 +81,14 @@ services:
       - 9411:9411
     networks:
       - b-net
-
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - b-net
 volumes:
   mysql-data:
     driver: local
