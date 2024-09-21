@@ -9,6 +9,7 @@ import lombok.Setter;
 import org.springframework.lang.NonNull;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -20,14 +21,15 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     private Integer userId;
+    private Byte type;
     @Nonnull
     private double amount;
-    private Date date;
+    private LocalDateTime date;
 
     public Transaction(String id, Integer userId, @Nonnull double amount , Date date) {
         this.id = id;
         this.userId = userId;
         this.amount = amount;
-        this.date = new Date();
+        this.date = LocalDateTime.now();
     }
 }

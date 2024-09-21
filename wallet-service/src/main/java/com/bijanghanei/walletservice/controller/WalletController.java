@@ -35,7 +35,7 @@ public class WalletController {
 
     @PutMapping("/update")
     public HttpStatus UpdateBalance(@RequestBody InputDto input){
-        return walletService.updateWalletBalance(input.getUserId(),input.getAmount());
+        return walletService.updateWalletBalance(input);
     }
     @PostMapping("/create")
     public void CreateWallet(){
