@@ -4,7 +4,9 @@ import com.bijanghanei.transactionservice.dto.WalletUpdateMessageDto;
 import com.bijanghanei.transactionservice.entity.Transaction;
 import com.bijanghanei.transactionservice.external.Wallet;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.stereotype.Service;
 
+@Service
 public class WalletUpdateMessageProducer {
     final RabbitTemplate rabbitTemplate;
 

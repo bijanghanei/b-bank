@@ -4,36 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6b35076-f7d8-41b6-bf60-9d76c313c77f" name="Changes" comment="b-bank-001-messagequeue initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/bijanghanei/notificationservice/NotificationServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/bijanghanei/notificationservice/dto/WalletUpdateMessageDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/bijanghanei/notificationservice/rabbitmq/RabbitMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/bijanghanei/notificationservice/rabbitmq/WalletUpdateMessageConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/test/java/com/bijanghanei/notificationservice/NotificationServiceApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transaction-service/src/main/java/com/bijanghanei/transactionservice/dto/WalletUpdateMessageDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transaction-service/src/main/java/com/bijanghanei/transactionservice/entity/TransactionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transaction-service/src/main/java/com/bijanghanei/transactionservice/rabbitmq/RabbitMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transaction-service/src/main/java/com/bijanghanei/transactionservice/rabbitmq/WalletUpdateMessageProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-service/src/main/java/com/bijanghanei/transactionservice/dto/InputDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-service/src/main/java/com/bijanghanei/transactionservice/dto/InputDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-service/src/main/java/com/bijanghanei/transactionservice/entity/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-service/src/main/java/com/bijanghanei/transactionservice/entity/Transaction.java" afterDir="false" />
+    <list default="true" id="e6b35076-f7d8-41b6-bf60-9d76c313c77f" name="Changes" comment="b-bank-001-messagequeue structured notif microservice and rabbitmq">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/bijanghanei/notificationservice/rabbitmq/WalletUpdateMessageConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/bijanghanei/notificationservice/rabbitmq/WalletUpdateMessageConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/bijanghanei/notificationservice/service/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/bijanghanei/notificationservice/service/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/bijanghanei/notificationservice/service/NotificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/bijanghanei/notificationservice/service/NotificationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction-service/src/main/java/com/bijanghanei/transactionservice/rabbitmq/WalletUpdateMessageProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-service/src/main/java/com/bijanghanei/transactionservice/rabbitmq/WalletUpdateMessageProducer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transaction-service/src/main/java/com/bijanghanei/transactionservice/service/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-service/src/main/java/com/bijanghanei/transactionservice/service/TransactionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/bijanghanei/walletservice/controller/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/bijanghanei/walletservice/controller/WalletController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/bijanghanei/walletservice/dto/InputDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/bijanghanei/walletservice/dto/InputDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/bijanghanei/walletservice/service/WalletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/bijanghanei/walletservice/service/WalletService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/bijanghanei/walletservice/service/WalletServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/bijanghanei/walletservice/service/WalletServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +51,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.GatewayApplication.executor": "Run",
+    "Application.NotificationServiceApplication.executor": "Run",
     "Application.ServiceRegistryApplication.executor": "Run",
     "Application.TransactionServiceApplication.executor": "Run",
     "Application.WalletServiceApplication.executor": "Run",
@@ -81,16 +61,50 @@
     "git-widget-placeholder": "b-bank-001-messagequeue",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "B:/Programmig Projects/JavaProjects/b-bank/notification-service/src/main/java/com/bijanghanei/notificationservice"
+    "last_opened_file_path": "B:/My Desk/zibasho"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.GatewayApplication">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="B:\Programmig Projects\JavaProjects\b-bank\notification-service\src\main\java\com\bijanghanei\notificationservice" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bijanghanei.notificationservice.dto" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.NotificationServiceApplication">
     <configuration name="GatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bijanghanei.gateway.GatewayApplication" />
       <module name="gateway" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.bijanghanei.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotificationServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bijanghanei.notificationservice.NotificationServiceApplication" />
+      <module name="notification-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bijanghanei.notificationservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceRegistryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bijanghanei.serviceregistry.ServiceRegistryApplication" />
+      <module name="service-registry" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bijanghanei.serviceregistry.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -111,11 +125,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WalletServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bijanghanei.walletservice.WalletServiceApplication" />
+      <module name="wallet-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bijanghanei.walletservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TransactionServiceApplication" />
-        <item itemvalue="Application.GatewayApplication" />
-        <item itemvalue="Application.TransactionServiceApplication" />
+        <item itemvalue="Application.NotificationServiceApplication" />
+        <item itemvalue="Application.WalletServiceApplication" />
+        <item itemvalue="Application.ServiceRegistryApplication" />
         <item itemvalue="Application.GatewayApplication" />
         <item itemvalue="Application.TransactionServiceApplication" />
       </list>
@@ -162,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726900360196</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="b-bank-001-messagequeue structured notif microservice and rabbitmq">
+      <option name="closed" value="true" />
+      <created>1726905812753</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726905812753</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,6 +216,7 @@
     <MESSAGE value="b-bank-0001-messagequeueimplementation initial" />
     <MESSAGE value="develop initial commit" />
     <MESSAGE value="b-bank-001-messagequeue initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="b-bank-001-messagequeue initial commit" />
+    <MESSAGE value="b-bank-001-messagequeue structured notif microservice and rabbitmq" />
+    <option name="LAST_COMMIT_MESSAGE" value="b-bank-001-messagequeue structured notif microservice and rabbitmq" />
   </component>
 </project>
