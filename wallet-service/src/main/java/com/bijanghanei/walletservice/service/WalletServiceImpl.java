@@ -1,5 +1,6 @@
 package com.bijanghanei.walletservice.service;
 
+import com.bijanghanei.walletservice.dto.InputDto;
 import com.bijanghanei.walletservice.dto.WalletDto;
 import com.bijanghanei.walletservice.entity.Wallet;
 import com.bijanghanei.walletservice.repository.WalletRepository;
@@ -52,15 +53,18 @@ public class WalletServiceImpl implements WalletService{
         walletRepository.save(w);
     }
 
-    @Override
-    public HttpStatus updateWalletBalance(Integer id, double amount) {
+    public HttpStatus updateWalletBalance(Integer id, double amount, byte type) {
         Wallet wallet = walletRepository.findById(id).orElse(null);
         if (wallet != null){
-            wallet.setBalance(wallet.getBalance()+amount);
+            wallet.setBalance(type == 0 ? (wallet.getBalance()+amount) : (wallet.getBalance()-amount));
             walletRepository.save(wallet);
             return HttpStatus.OK;
         }else{
             return HttpStatus.NOT_FOUND;
         }
+    }
+    @Override
+    public HttpStatus updateWalletBalance(InputDto inputDto) {
+        return updateWalletBalance(inputDto.getUserId(), inputDto.getAmount(),  inputDto.getType());
     }
 }

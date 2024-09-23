@@ -5,6 +5,7 @@ import com.bijanghanei.transactionservice.dto.InputDto;
 import com.bijanghanei.transactionservice.dto.TransactionDto;
 import com.bijanghanei.transactionservice.entity.Transaction;
 import com.bijanghanei.transactionservice.external.Wallet;
+import com.bijanghanei.transactionservice.rabbitmq.WalletUpdateMessageProducer;
 import com.bijanghanei.transactionservice.repository.TransactionRepository;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
@@ -20,10 +21,12 @@ public class TransactionServiceImpl implements TransactionService{
 //    RestTemplate restTemplate;
     private final TransactionRepository transactionRepository;
     private final WalletClient walletClient;
+    private final WalletUpdateMessageProducer messageProducer;
 
-    public TransactionServiceImpl(TransactionRepository transactionRepository, WalletClient walletClient) {
+    public TransactionServiceImpl(TransactionRepository transactionRepository, WalletClient walletClient, WalletUpdateMessageProducer messageProducer) {
         this.transactionRepository = transactionRepository;
         this.walletClient = walletClient;
+        this.messageProducer = messageProducer;
     }
 
     @Override
@@ -55,8 +58,9 @@ public class TransactionServiceImpl implements TransactionService{
                 Transaction transaction = new Transaction();
                 transaction.setUserId(input.getUserId());
                 transaction.setAmount(input.getAmount());
+                transaction.setType(input.getType());
                 transactionRepository.save(transaction);
-
+                messageProducer.sendMessage(transaction, wallet);
                 return new TransactionDto(transaction.getId());
             }
         }
