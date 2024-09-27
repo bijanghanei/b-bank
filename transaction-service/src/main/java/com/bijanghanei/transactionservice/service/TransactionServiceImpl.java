@@ -54,6 +54,7 @@ public class TransactionServiceImpl implements TransactionService{
 //            ResponseEntity<HttpStatus> response = restTemplate.exchange("http://wallet-service:8082", HttpMethod.PUT,request,HttpStatus.class);
 
             ResponseEntity<HttpStatus> response = walletClient.updateWallet(input);
+            wallet = walletClient.getWallet(input.getUserId());
             if (response.getBody() == HttpStatus.OK){
                 Transaction transaction = new Transaction();
                 transaction.setUserId(input.getUserId());
