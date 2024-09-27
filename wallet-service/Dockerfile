@@ -1,5 +1,5 @@
-FROM openjdk:17
+FROM openjdk:21
 LABEL authors="Bijan Ghanei"
 COPY target/wallet-service-0.0.1-SNAPSHOT.jar wallet-service.jar
-EXPOSE 8082
+#EXPOSE 8082
 ENTRYPOINT ["java", "-jar","/wallet-service.jar"]

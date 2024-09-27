@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6b35076-f7d8-41b6-bf60-9d76c313c77f" name="Changes" comment="b-bank-001-messagequeue structured notif microservice and rabbitmq">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Changes/shelved.patch" beforeDir="false" />
+    <list default="true" id="e6b35076-f7d8-41b6-bf60-9d76c313c77f" name="Changes" comment="develop fixed">
+      <change afterPath="$PROJECT_DIR$/gateway/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/resources/application-docker.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application-docker.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/transaction-service/src/main/resources/application-docker.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wallet-service/src/main/resources/application-docker.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-registry/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-registry/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,31 +51,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GatewayApplication.executor": "Run",
-    "Application.NotificationServiceApplication.executor": "Run",
-    "Application.ServiceRegistryApplication.executor": "Run",
-    "Application.TransactionServiceApplication.executor": "Run",
-    "Application.WalletServiceApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "develop",
-    "jdk.selected.JAVA_MODULE": "21",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "B:/My Desk/zibasho"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NotificationServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ServiceRegistryApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TransactionServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WalletServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.gateway [clean,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.transaction-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.transaction-service [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet-service [clean,package].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;b-bank-002-dockerizeapps&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;B:/Programmig Projects/JavaProjects/b-bank/gateway&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;B:/Programmig Projects/JavaProjects/b-bank/gateway/src/main/resources/application.properties&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="B:\Programmig Projects\JavaProjects\b-bank\notification-service\src\main\java\com\bijanghanei\notificationservice" />
+      <recent name="B:\Programmig Projects\JavaProjects\b-bank\gateway" />
+      <recent name="B:\Programmig Projects\JavaProjects\b-bank\notification-service" />
+      <recent name="B:\Programmig Projects\JavaProjects\b-bank\notification-service\src\main\resources" />
+      <recent name="B:\Programmig Projects\JavaProjects\b-bank\wallet-service\src\main\resources" />
+      <recent name="B:\Programmig Projects\JavaProjects\b-bank\transaction-service\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.bijanghanei.notificationservice.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GatewayApplication">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="GatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bijanghanei.gateway.GatewayApplication" />
       <module name="gateway" />
@@ -105,19 +125,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransactionServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.bijanghanei.transactionservice.TransactionServiceApplication" />
-      <module name="transaction-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bijanghanei.transactionservice.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WalletServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bijanghanei.walletservice.WalletServiceApplication" />
       <module name="wallet-service" />
@@ -131,13 +138,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Application.GatewayApplication" />
         <item itemvalue="Application.ServiceRegistryApplication" />
         <item itemvalue="Application.NotificationServiceApplication" />
         <item itemvalue="Application.WalletServiceApplication" />
-        <item itemvalue="Application.TransactionServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727114520722</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="develop fixed">
+      <option name="closed" value="true" />
+      <created>1727114730717</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1727114730717</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,6 +247,7 @@
     <MESSAGE value="develop initial commit" />
     <MESSAGE value="b-bank-001-messagequeue initial commit" />
     <MESSAGE value="b-bank-001-messagequeue structured notif microservice and rabbitmq" />
-    <option name="LAST_COMMIT_MESSAGE" value="b-bank-001-messagequeue structured notif microservice and rabbitmq" />
+    <MESSAGE value="develop fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="develop fixed" />
   </component>
 </project>
